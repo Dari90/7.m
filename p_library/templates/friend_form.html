@@ -1,0 +1,16 @@
+{% extends "base_templ.html" %}
+
+{% block content %}
+
+<title>{% block title %} Список друзей {% endblock title %}</title>
+
+    <h3 class="display-4 text-center my-4">Список друзей</h3>
+    <div class="col-md-6 mx-auto">
+        <ul class="list-group">
+            {% for friend in object_list %}
+                <li class="list-group-item">{{ friend.friend_name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+{% endblock %}

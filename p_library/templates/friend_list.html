@@ -1,0 +1,26 @@
+{% extends "base_templ.html" %}
+
+{% block content %}
+
+<title>{% block title %} Список книг {% endblock title %}</title>
+
+    <h2 class="display-4 text-center my-4">Список книг выданных друзьям</h2>
+    {% for friend in friends %}
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group">
+                    <p class="card-header bg-secondary">{{ friend.friend_name }}</p>            <ul class="list-group">
+                            {% for book in friend.books.all %}
+                                <li class="list-group-item"> Книга: {{ book.title }}</li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>  
+    {% endfor %}
+    
+{% endblock %}

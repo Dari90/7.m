@@ -1,0 +1,16 @@
+{% extends "base_templ.html" %}
+<title>{% block title %} Профиль {% endblock title %}</title>
+{% load i18n %}
+{% block content %}
+
+    <div id='profil'  class=" text-left my-4">
+    
+        <h1 >{{ title }} пользователя {{ username }}</h1>
+        
+        <h3>Привет, {{ username }}!</h3><br> 
+        
+        <p>Тут ты можешь <a style="color: blue;" href="logout">выйти</a>.</p>  
+
+    <div id='profil'  class=" text-left my-4">
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base_templ.html" %}
+
+{% block content %}
+
+<title>{% block title %} Издательства {% endblock title %}</title>
+
+    <h3 class="display-4 text-center my-4">Издательства</h3>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+
+            {% for p, books in data.items %}
+            <div>
+                <div class="card-body">
+                <div class="card-header bg-secondary">{{ p }}</div>
+                    <ul class="list-group">
+                    {% for book in books %}
+                        <li class="list-group-item">{{ book }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    
+{% endblock %}
